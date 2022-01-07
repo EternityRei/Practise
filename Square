@@ -1,0 +1,35 @@
+package com.company;
+
+
+import javax.swing.*;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        char[][] border = new char[3][3];
+        Scanner console = new Scanner(System.in);
+        System.out.println("Для выхода введите e или пустую строку");
+        String flag = console.nextLine();
+        System.out.println("Введите сколько раз хотите повторить");
+        int flag2 = console.nextInt();
+        int k = 0; //счётчик
+        if (!flag.isEmpty() && !flag.equalsIgnoreCase("e")) {
+            while (flag2 != k) {
+                for (int i = 0; i < border.length; i++) {
+                    for (int j = 0; j < border.length; j++) {
+                        border[i][j] = '-';
+                        if (i == j && i % 2 != 0) {
+                            border[i][j] = ' ';
+                        }
+                        System.out.print(border[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+                k++;
+            }
+        }
+    }
+}
